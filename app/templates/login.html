@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="auth-wrap"><form class="form card" method="post">
+<h1>Welcome back</h1><p>Sign in to access your saved recommendations.</p>
+{% if request.query_params.get('error') %}<div class="alert">{{ request.query_params.get('error') }}</div>{% endif %}
+<label>Email<input type="email" name="email" required></label>
+<label>Password<input type="password" name="password" required></label>
+<button class="btn" type="submit">Login</button>
+<p>New user? <a href="/register">Create an account</a></p>
+</form></div>
+{% endblock %}

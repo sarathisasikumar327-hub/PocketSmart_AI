@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Recommendation History{% endblock %}
+{% block content %}
+<div class="page-head"><div><p class="eyebrow">HISTORY</p><h1>Your recommendation history</h1></div></div>
+{% for item in items %}
+<details class="history card"><summary><strong>{{ item.planner_type|title }}</strong> · ₹{{ "{:,.0f}".format(item.budget) }} · {{ item.created_at.strftime("%d-%m-%Y %H:%M") }}</summary>
+<p>{{ item.result.summary }}</p>
+<a class="btn small" href="/planner/{{ item.planner_type }}">Create Similar Plan</a>
+</details>
+{% else %}<div class="card"><p>No history yet. Create your first plan.</p></div>{% endfor %}
+{% endblock %}

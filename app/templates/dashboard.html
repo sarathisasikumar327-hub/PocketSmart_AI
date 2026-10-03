@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="page-head"><div><p class="eyebrow">DASHBOARD</p><h1>Hello, {{ user.name }}</h1><p>Recent recommendation activity.</p></div><a class="btn" href="/planner/home">New Plan</a></div>
+<div class="grid three">
+<a class="card link-card" href="/planner/home"><div class="icon">🏠</div><h3>Home Planner</h3><p>Plan a room.</p></a>
+<a class="card link-card" href="/planner/party"><div class="icon">🎉</div><h3>Party Planner</h3><p>Plan an event.</p></a>
+<a class="card link-card" href="/planner/jewelry"><div class="icon">💎</div><h3>Jewelry Planner</h3><p>Match an occasion.</p></a>
+</div>
+<h2>Recent History</h2>
+<div class="table-wrap"><table><tr><th>Planner</th><th>Budget</th><th>Date</th></tr>
+{% for h in history %}<tr><td>{{ h.planner_type|title }}</td><td>₹{{ "{:,.0f}".format(h.budget) }}</td><td>{{ h.created_at.strftime("%d-%m-%Y %H:%M") }}</td></tr>{% else %}<tr><td colspan="3">No recommendations yet.</td></tr>{% endfor %}
+</table></div>
+{% endblock %}

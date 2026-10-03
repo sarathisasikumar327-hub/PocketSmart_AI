@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="page-head"><div><p class="eyebrow">AI RESULT</p><h1>{{ title }}</h1><p>{{ result.summary }}</p></div></div>
+<h2>Budget Allocation</h2>
+<div class="grid three">{% for x in result.budget_allocation %}<div class="card"><h3>{{ x.category }}</h3><div class="amount">₹{{ "{:,.0f}".format(x.amount) }}</div><p>{{ x.reason }}</p></div>{% endfor %}</div>
+<h2>Recommendations</h2>
+<div class="grid three">{% for x in result.recommendations %}
+<div class="card product"><span class="tag">{{ x.platform }}</span><h3>{{ x.name }}</h3><p class="muted">{{ x.category }}</p><div class="amount">₹{{ "{:,.0f}".format(x.estimated_price) }}</div><p>{{ x.reason }}</p><a class="btn small" target="_blank" rel="noopener" href="{{ x.link }}">View / Search</a></div>
+{% endfor %}</div>
+<h2>Tips</h2><ul class="tips">{% for tip in result.tips %}<li>{{ tip }}</li>{% endfor %}</ul>
+<a class="btn ghost" href="/dashboard">Back to Dashboard</a>
+{% endblock %}

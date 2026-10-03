@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Jewelry Budget Planner{% endblock %}
+{% block content %}
+<div class="page-head"><div><p class="eyebrow">JEWELRY</p><h1>Jewelry Budget Planner</h1><p>Get occasion and style matched jewelry suggestions within your budget.</p></div></div>
+<form class="form card planner-form" method="post" action="/generate-jewelry" enctype="multipart/form-data">
+<div class="grid two">
+<label>Total Budget (₹)<input type="number" name="budget" min="1" required placeholder="10000"></label>
+<label>Occasion<select name="occasion"><option>Wedding</option><option>Engagement</option><option>Birthday</option><option>Party</option><option>Office</option><option>Festival</option></select></label>
+<label>Style<select name="style"><option>Elegant</option><option>Traditional</option><option>Minimal</option><option>Modern</option><option>Statement</option></select></label>
+<label>Metal<select name="metal"><option>Any</option><option>Gold</option><option>Silver</option><option>Rose Gold</option><option>Artificial</option></select></label>
+<label>Outfit Color<input name="outfit_color" placeholder="Example: maroon"></label>
+<label>Outfit Image (optional)<input type="file" name="outfit_image" accept=".jpg,.jpeg,.png,.webp"></label>
+<label class="full">Extra Preferences<textarea name="extra" placeholder="Example: matching earrings, lightweight design"></textarea></label>
+</div>
+<button class="btn" type="submit">Generate AI Recommendations ✦</button>
+</form>
+{% endblock %}

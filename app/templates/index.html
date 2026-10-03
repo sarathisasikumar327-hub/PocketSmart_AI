@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}PocketSmart AI{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">SMART BUDGET ASSISTANT</p>
+    <h1>Plan smarter.<br><span>Spend with confidence.</span></h1>
+    <p class="lead">PocketSmart AI turns your budget and preferences into practical recommendations for home interiors, parties and jewelry.</p>
+    <div class="actions">
+      <a class="btn" href="/register">Get Started</a>
+      <a class="btn ghost" href="/login">Login</a>
+    </div>
+  </div>
+  <div class="hero-card"><div class="spark">✦</div><h3>AI-powered planning</h3><p>Budget allocation · personalized suggestions · optional image analysis</p></div>
+</section>
+<section class="grid three">
+  <a class="card link-card" href="/planner/home"><div class="icon">🏠</div><h2>Home Interior</h2><p>Furniture, lighting, decor and room planning within your budget.</p></a>
+  <a class="card link-card" href="/planner/party"><div class="icon">🎉</div><h2>Party Planner</h2><p>Plan food, decoration, entertainment and accommodation for events.</p></a>
+  <a class="card link-card" href="/planner/jewelry"><div class="icon">💎</div><h2>Jewelry Planner</h2><p>Get occasion and style matched jewelry suggestions, with optional outfit image.</p></a>
+</section>
+{% endblock %}

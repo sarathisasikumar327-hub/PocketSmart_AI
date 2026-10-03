@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home Interior Planner{% endblock %}
+{% block content %}
+<div class="page-head"><div><p class="eyebrow">HOME</p><h1>Home Interior Planner</h1><p>Allocate your budget across furniture, lighting and decor.</p></div></div>
+<form class="form card planner-form" method="post" action="/generate-home" >
+<div class="grid two">
+<label>Total Budget (₹)<input type="number" name="budget" min="1" required placeholder="50000"></label>
+<label>Room<select name="room"><option>Living Room</option><option>Bedroom</option><option>Kitchen</option><option>Dining Room</option></select></label>
+<label>Style<select name="style"><option>Modern</option><option>Minimal</option><option>Traditional</option><option>Luxury</option></select></label>
+<label>Lights Quantity<input type="number" name="lights" min="0" value="2"></label>
+<label>Ceiling Fans<input type="number" name="fans" min="0" value="1"></label>
+<label>Dining Tables<input type="number" name="tables" min="0" value="1"></label>
+<label class="full">Extra Preferences<textarea name="extra" placeholder="Example: warm lighting, space-saving furniture"></textarea></label>
+</div>
+<button class="btn" type="submit">Generate AI Recommendations ✦</button>
+</form>
+{% endblock %}

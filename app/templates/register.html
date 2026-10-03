@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="auth-wrap"><form class="form card" method="post">
+<h1>Create your account</h1><p>Your recommendations and history are stored under your account.</p>
+{% if request.query_params.get('error') %}<div class="alert">{{ request.query_params.get('error') }}</div>{% endif %}
+<label>Name<input name="name" required minlength="2"></label>
+<label>Email<input type="email" name="email" required></label>
+<label>Password<input type="password" name="password" required minlength="6"></label>
+<button class="btn" type="submit">Register</button>
+<p>Already registered? <a href="/login">Login</a></p>
+</form></div>
+{% endblock %}

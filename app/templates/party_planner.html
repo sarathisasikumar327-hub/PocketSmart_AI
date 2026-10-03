@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Party Budget Planner{% endblock %}
+{% block content %}
+<div class="page-head"><div><p class="eyebrow">PARTY</p><h1>Party Budget Planner</h1><p>Plan food, venue, decoration and entertainment around your event budget.</p></div></div>
+<form class="form card planner-form" method="post" action="/generate-party" >
+<div class="grid two">
+<label>Total Budget (₹)<input type="number" name="budget" min="1" required placeholder="75000"></label>
+<label>Event Type<select name="event_type"><option>Birthday</option><option>Wedding</option><option>Corporate</option><option>Anniversary</option><option>Other</option></select></label>
+<label>Guest Count<input type="number" name="guests" min="1" required placeholder="50"></label>
+<label>Venue<select name="venue"><option>Indoor</option><option>Outdoor</option><option>Hotel</option><option>Home</option></select></label>
+<label>Food Preference<select name="food_preference"><option>Mixed</option><option>Vegetarian</option><option>Non-Vegetarian</option><option>Snacks</option></select></label>
+<label class="full">Extra Preferences<textarea name="extra" placeholder="Example: simple decoration, music, family-friendly"></textarea></label>
+</div>
+<button class="btn" type="submit">Generate AI Recommendations ✦</button>
+</form>
+{% endblock %}
